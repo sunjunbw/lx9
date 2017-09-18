@@ -1,0 +1,34 @@
+html,body{
+    height: 100%;
+}
+body{
+    margin:0;
+    ul{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    .box{
+        @extend html;
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        height: 50px;
+        width:100%;
+        background:lightseagreen ;
+    }
+    section{
+        width:100%;
+        flex:1;
+        background:#ccc ;
+        overflow-y:auto ;
+    }
+    footer{
+        height: 50px;
+        width:100%;
+        background:lightseagreen ;
+    }
+    
+    
+}
