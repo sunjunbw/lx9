@@ -48,7 +48,7 @@ html{
     }
     section{
         flex: 1;
-      
+         overflow-y: auto;
             img{
                 width:50%;
                 height: 358/$sc+rem;
