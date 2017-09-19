@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+		<link rel="stylesheet" href="css/index.css" />
+		
+	</head>
+	<body>
+		<div class="box">
+			<header>头部</header>
+		<section id="list">
+			<ul id="list1">
+				<li>abc1</li>
+				<li>abc2</li>
+				<li>abc3</li>
+				<li>abc4</li>
+				<li>abc5</li>
+				<li>abc6</li>
+				<li>abc7</li>
+				<li>abc8</li>
+				<li>abc9</li>
+				<li>abc10</li>
+				<li>abc11</li>
+				<li>abc12</li>
+				<li>abc13</li>
+				<li>abc14</li>
+				<li>abc15</li>
+				<li>abc16</li>
+				<li>abc17</li>
+				<li>abc18</li>
+				<li>abc19</li>
+				<li>abc20</li>
+				<li>abc21</li>
+				<li>abc22</li>
+				<li>abc23</li>
+				<li>abc24</li>
+				<li>abc25</li>
+				<li>abc26</li>
+				<li>abc27</li>
+				<li>abc28</li>
+				<li>abc29</li>
+				<li>abc30</li>
+				<li>abc31</li>
+				<li>abc32</li>
+				<li>abc33</li>
+				<li>abc34</li>
+				<li>abc35</li>
+				<li>abc36</li>
+				<li>abc37</li>
+				<li>abc38</li>
+				<li>abc39</li>
+				<li>abc40</li>
+				<li>abc41</li>
+				<li>abc42</li>
+				<li>abc43</li>
+				<li>abc44</li>
+				<li>abc45</li>
+				<li>abc46</li>
+				<li>abc47</li>
+				<li>abc48</li>
+				<li>abc49</li>
+				<li>abc50</li>
+			</ul>
+			
+		</section>
+		<footer>尾部</footer>
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/alloy_finger.js"></script>
+		<script>
+			 var oList=document.querySelector("#list");
+			 var t;
+			 new AlloyFinger(oList,{
+			 	pressMove:function(ev){
+			 		if(oList.scrollTop==0){
+			 			if(!t){
+			 				t=$("<li>").html("loading....").prependTo($(oList));
+			 			}
+			 			
+			 		}
+			 		else{
+			 			t.remove();
+			 			t=null;
+			 		}
+			 		
+			 	},
+			 	
+			 	swipe:function(ev){
+			 		
+			 		var allH = $("li").height()*$("li").length;
+			 		var ch=$("#list").height()+oList.scrollTop;
+			 		if(ev.direction=="Down" && oList.scrollTop==0){
+			 			
+			 			
+			 			$.get("deom.json",function(data){
+//			 				for(var item of data.list){
+			 				 $("<li>").html("abc").prependTo($(oList));
+			 				
+//			 				}
+			 				
+			 			})
+			 		}
+			 		
+			 		if(ev.direction=="Up" && ch>=allH){
+			 			$.get("deom.json",function(data){
+			 				for(var item of data.list){
+			 				 $("<li>").html(item.title).appendTo($(oList));
+			 				
+			 				}
+			 				
+			 			})
+			 		}
+			 	}
+			 })
+		</script>
+	</body>
+</html>
