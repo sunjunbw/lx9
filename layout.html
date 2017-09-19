@@ -87,8 +87,11 @@
 			 		var allH = $("li").height()*$("li").length;
 			 		var ch=$("#list").height()+oList.scrollTop;
 			 		if(ev.direction=="Down" && oList.scrollTop==0){
-			 			t.remove();
+			 			if(t){
+			 				t.remove();
 			 			t=null;
+			 			}
+			 			
 			 			$.get("deom.json",function(data){
 			 				for(var item of data.list){
 			 				 $("<li>").html(item.title).prependTo($(oList));
