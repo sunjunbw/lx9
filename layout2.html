@@ -72,7 +72,10 @@
 		<script>
 			 var oList=document.querySelector("#list");
 			 var t;
+			 var y=0;
+			 var dis=0;
 			 new AlloyFinger(oList,{
+			 	
 			 	pressMove:function(ev){
 			 		if(oList.scrollTop==0){
 			 			if(!t){
@@ -80,7 +83,7 @@
 			 			}
 			 			
 			 		}
-			 	
+			 	  console.log(dis);
 			 		
 			 	},
 			 	
