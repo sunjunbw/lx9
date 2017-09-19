@@ -82,11 +82,14 @@
 			 		}
 			 		
 			 	},
-			 	swipe:function(ev){
+			 	touchend:function(){
 			 		if(t){
 			 				t.remove();
 			 			t=null;
 			 			}
+			 	},
+			 	swipe:function(ev){
+			 		
 			 		var allH = $("li").height()*$("li").length;
 			 		var ch=$("#list").height()+oList.scrollTop;
 			 		if(ev.direction=="Down" && oList.scrollTop==0){
