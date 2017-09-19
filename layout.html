@@ -80,14 +80,12 @@
 			 			}
 			 			
 			 		}
+			 		else{
+			 			t.remove();
+			 		}
 			 		
 			 	},
-			 	touchend:function(){
-			 		if(t){
-			 				t.remove();
-			 			t=null;
-			 			}
-			 	},
+			 	
 			 	swipe:function(ev){
 			 		
 			 		var allH = $("li").height()*$("li").length;
