@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js"></script>
+		<script>
+			var app = angular.module("app",[]);
+			app.directive("myheader",function(){
+				 return {
+				 	  restrict:"E",
+				 	  templateUrl:"../views/header.html"
+				 }
+			})
+			
+			app.directive("mycontent",function(){
+				return {
+					restrict:"E",
+				templateUrl:"../views/list.html"
+				}
+				
+			})
+			
+			app.directive("myfooter",function(){
+				return {
+					 restrict:"E",
+					 templateUrl:"../views/f.html"
+				}
+			})
+		</script>
+	</head>
+	<body>
+		  <myheader></myheader>
+		  
+		  <mycontent></mycontent>
+		  
+		  <myfooter></myfooter>
+		 
+	</body>
+</html>

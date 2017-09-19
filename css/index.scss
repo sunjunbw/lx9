@@ -7,6 +7,7 @@ body{
         margin:0;
         padding:0;
         list-style: none;
+       
     }
     .box{
         @extend html;
@@ -23,6 +24,9 @@ body{
         flex:1;
         background:#ccc ;
         overflow-y:auto ;
+         li{
+            height: 50px;
+        }
     }
     footer{
         height: 50px;

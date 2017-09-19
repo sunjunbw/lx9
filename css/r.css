@@ -1,0 +1,8 @@
+html { height: 100%; }
+
+body { height: 100%; margin: 0; }
+
+.footer { position: fixed; height: 50px; bottom: 0; width: 100%; }
+.footer a { display: block; width: 33%; line-height: 50px; height: 50px; float: left; text-align: center; }
+
+/*# sourceMappingURL=r.css.map */

@@ -5,12 +5,13 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
 		<link rel="stylesheet" href="css/index.css" />
+		
 	</head>
 	<body>
 		<div class="box">
 			<header>头部</header>
-		<section>
-			<ul>
+		<section id="list">
+			<ul id="list1">
 				<li>abc1</li>
 				<li>abc2</li>
 				<li>abc3</li>
@@ -65,9 +66,49 @@
 			
 		</section>
 		<footer>尾部</footer>
-			
-			
 		</div>
-		
+		<script src="js/jquery.js"></script>
+		<script src="js/alloy_finger.js"></script>
+		<script>
+			 var oList=document.querySelector("#list");
+			 var t;
+			 new AlloyFinger(oList,{
+			 	pressMove:function(ev){
+			 		if(oList.scrollTop==0){
+			 			if(!t){
+			 				t=$("<li>").html("loading....").prependTo($(oList));
+			 			}
+			 			
+			 		}
+			 		
+			 	},
+			 	swipe:function(ev){
+			 		
+			 		var allH = $("li").height()*$("li").length;
+			 		var ch=$("#list").height()+oList.scrollTop;
+			 		if(ev.direction=="Down" && oList.scrollTop==0){
+			 			t.remove();
+			 			t=null;
+			 			$.get("deom.json",function(data){
+			 				for(var item of data.list){
+			 				 $("<li>").html(item.title).prependTo($(oList));
+			 				
+			 				}
+			 				
+			 			})
+			 		}
+			 		
+			 		if(ev.direction=="Up" && ch>=allH){
+			 			$.get("deom.json",function(data){
+			 				for(var item of data.list){
+			 				 $("<li>").html(item.title).appendTo($(oList));
+			 				
+			 				}
+			 				
+			 			})
+			 		}
+			 	}
+			 })
+		</script>
 	</body>
 </html>
