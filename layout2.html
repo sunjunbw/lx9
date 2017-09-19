@@ -99,7 +99,10 @@
 			 				 $("<li>").html("abc").prependTo($(oList));
 			 				
 //			 				}
-			 				
+			 				if(t){
+			 						t.remove();
+			 			t=null;
+			 				}
 			 			})
 			 		}
 			 		
